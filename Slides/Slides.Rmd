@@ -1476,18 +1476,14 @@ ggplot()+
 --
 
 .pull-left[**DESeq2**
-```{r,echo = F,dpi=300, out.width= "350px", fig.align='center'}
-plotPCA(rld, intgroup = "Condition")+
-  geom_label_repel(aes(label = colnames(assay(rld))), 
-                   segment.color = "grey50", 
-                   box.padding = 0.35, 
-                   point.padding = 0.5)
+```{r, out.width="350px", fig.align='center'}
+knitr::include_graphics("./Images/PCADESeq2.png")
 ```
 ]
 --
 .pull-right[**PCA tools**
-```{r, echo = F, dpi=300, out.width="350px", fig.align='center'}
-biplot(PCA, lab = colnames(assay(rld)), colby = "Treatment", legendPosition = "right")
+```{r, out.width="350px", fig.align='center'}
+knitr::include_graphics("./Images/PCAtools.png")
 ```
 ]
 
@@ -1495,8 +1491,8 @@ biplot(PCA, lab = colnames(assay(rld)), colby = "Treatment", legendPosition = "r
 ## PCA
 ## ¿Cuánta varianza es explicada por cada componente?
 
-```{r, dpi=300,out.width="400px", fig.align='center', echo = F, warning=FALSE}
-screeplot(PCA)
+```{r, out.width="500px", fig.align='center'}
+knitr::include_graphics("./Images/ScreeplotPCAtools.png")
 ```
 
 ---
@@ -1687,8 +1683,8 @@ plotMA(res)
 ---
 # MAplot
 
-```{r, echo = F, dpi=200, out.width="450px", fig.align='center'}
-plotMA(res)
+```{r, out.width="600px", fig.align='center'}
+knitr::include_graphics("./Images/MAplotDESeq.png")
 ```
 
 ---
@@ -1717,16 +1713,16 @@ resultsNames(dds)
 .pull-left[
 Sin `lfcshrink` 
 
-```{r, echo = F, dpi=200, out.width="450px", fig.align='center'}
-plotMA(res)
+```{r, out.width="350px", fig.align='center'}
+knitr::include_graphics("./Images/MAplotDESeq.png")
 ```
 ]
 
 .pull-right[
 Con `lfcshrink` 
 
-```{r, echo = F, dpi=200, out.width="450px", fig.align='center'}
-plotMA(res_lfc)
+```{r, out.width="350px", fig.align='center'}
+knitr::include_graphics("./Images/MAplotlfc.png")
 ```
 ]
 ---
@@ -1763,8 +1759,8 @@ volcanoplotR(DEG, logfc = 0, p.adj = 0.1, type = "DESeq")
 ---
 # Volcano plot
 
-```{r, echo = F, dpi=200, out.width="450px", fig.align='center'}
-volcanoplotR(DEG, logfc = 0, p.adj = 0.1, type = "DESeq")
+```{r, out.width="600px", fig.align='center'}
+knitr::include_graphics("./Images/VolcanoplotDESeq.png")
 ```
 
 ---
@@ -1811,16 +1807,8 @@ pheatmap(norm_counts,
 ---
 # Heatmap
 
-```{r, echo = F, dpi=200, out.width="450px", fig.align='center'}
-pheatmap(norm_counts[rownames(significant), ], 
-         border_color = NA, 
-         scale = "row",
-         clustering_distance_rows = "euclidean", 
-         clustering_distance_cols = "euclidean", 
-         clustering_method = "average", 
-         show_colnames = F, 
-         show_rownames = F, 
-         annotation_col = annotation_col)
+```{r, out.width="650px", fig.align='center'}
+knitr::include_graphics("./Images/HeatmapDESeq.png")
 ```
 
 
