@@ -785,7 +785,7 @@ knitr::include_graphics("https://biocorecrg.github.io/RNAseq_course_2019/images/
 ¿Dónde estamos?
 
 ```{r, out.width = "450px",fig.align='center'}
-knitr::include_graphics("images/worflowTximeta.png")
+knitr::include_graphics("./Images/worflowTximeta.png")
 ```
  
 .tiny[Imagen tomada de [aquí](https://biocorecrg.github.io/RNAseq_course_2019/salmon.html)]
